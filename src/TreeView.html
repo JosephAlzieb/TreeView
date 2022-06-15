@@ -1,123 +1,17 @@
-<style>
-  .genealogy-scroll::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-  }
-  .genealogy-scroll::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #e4e4e4;
-  }
-  .genealogy-scroll::-webkit-scrollbar-thumb {
-    background: #212121;
-    border-radius: 10px;
-    transition: 0.5s;
-  }
-  .genealogy-scroll::-webkit-scrollbar-thumb:hover {
-    background: #d5b14c;
-    transition: 0.5s;
-  }
+<!-- "https://www.gcpsk12.org/cms/lib/GA02204486/Centricity/Domain/9896/eCLASS%20Logo.png" -->
+<!-- Ist mein U Liz pflichtig? -->
 
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Horizontal Genealogy Treeview</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="./style.css">
 
-  /*----------------genealogy-tree----------*/
-  .genealogy-body{
-    white-space: nowrap;
-    overflow-y: hidden;
-    padding: 50px;
-    min-height: 500px;
-    padding-top: 10px;
-  }
-  .genealogy-tree ul {
-    padding-top: 20px;
-    position: relative;
-    padding-left: 0px;
-    display: flex;
-  }
-  .genealogy-tree li {
-    float: left; text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 20px 5px 0 5px;
-  }
-  .genealogy-tree li::before, .genealogy-tree li::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 2px solid #ccc;
-    width: 50%;
-    height: 18px;
-  }
-  .genealogy-tree li::after{
-    right: auto; left: 50%;
-    border-left: 2px solid #ccc;
-  }
-  .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
-    display: none;
-  }
-  .genealogy-tree li:only-child{
-    padding-top: 0;
-  }
-  .genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
-    border: 0 none;
-  }
-  .genealogy-tree li:last-child::before{
-    border-right: 2px solid #ccc;
-    border-radius: 0 5px 0 0;
-    -webkit-border-radius: 0 5px 0 0;
-    -moz-border-radius: 0 5px 0 0;
-  }
-  .genealogy-tree li:first-child::after{
-    border-radius: 5px 0 0 0;
-    -webkit-border-radius: 5px 0 0 0;
-    -moz-border-radius: 5px 0 0 0;
-  }
-  .genealogy-tree ul ul::before{
-    content: '';
-    position: absolute; top: 0; left: 50%;
-    border-left: 2px solid #ccc;
-    width: 0; height: 20px;
-  }
-  .genealogy-tree li a{
-    text-decoration: none;
-    color: #666;
-    font-family: arial, verdana, tahoma;
-    font-size: 11px;
-    display: inline-block;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-  }
-
-  .genealogy-tree li a:hover+ul li::after,
-  .genealogy-tree li a:hover+ul li::before,
-  .genealogy-tree li a:hover+ul::before,
-  .genealogy-tree li a:hover+ul ul::before{
-    border-color:  #fbba00;
-  }
-
-  /*--------------memeber-card-design----------*/
-  .member-view-box{
-    padding:0px 20px;
-    text-align: center;
-    border-radius: 4px;
-    position: relative;
-    border: #212121;
-    /*background-color: gray;*/
-    width: 100px;
-  }
-  .member-image{
-    width: 60px;
-    position: relative;
-  }
-  .member-image img{
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-    background-color :#000;
-    z-index: 1;
-  }
-</style>
-
+</head>
+<body>
+<!-- partial:index.partial.html -->
 <div class="body genealogy-body genealogy-scroll">
   <div class="genealogy-tree">
     <ul>
@@ -127,7 +21,7 @@
             <div class="member-image">
               <img src="https://www.gcpsk12.org/cms/lib/GA02204486/Centricity/Domain/9896/eCLASS%20Logo.png">
               <div class="member-details">
-                <h4>Ist mein U Liz pflichtig?</h4>
+                <h3>Ist mein U Liz pflichtig?</h3>
               </div>
             </div>
           </div>
@@ -137,7 +31,7 @@
             <a href="javascript:void(0);">
               <div class="member-view-box">
                 <div class="member-image">
-                  <img src="https://www.gcpsk12.org/cms/lib/GA02204486/Centricity/Domain/9896/eCLASS%20Logo.png">
+                  <img src="https://image.flaticon.com/icons/svg/145/145867.svg" alt="Member">
                   <div class="member-details">
                     <h3>Member 1</h3>
                   </div>
@@ -356,7 +250,7 @@
                 </div>
               </div>
             </a>
-            <ul class="active">
+            <ul>
               <li>
                 <a href="javascript:void(0);">
                   <div class="member-view-box">
@@ -520,7 +414,7 @@
                 </div>
               </div>
             </a>
-            <ul class="active">
+            <ul>
               <li>
                 <a href="javascript:void(0);">
                   <div class="member-view-box">
@@ -678,18 +572,8 @@
     </ul>
   </div>
 </div>
+<!-- partial -->
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script><script  src="./script.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  $(function () {
-    $('.genealogy-tree ul').hide();
-    $('.genealogy-tree>ul').show();
-    $('.genealogy-tree ul.active').show();
-    $('.genealogy-tree li').on('click', function (e) {
-      var children = $(this).find('> ul');
-      if (children.is(":visible")) children.hide('fast').removeClass('active');
-      else children.show('fast').addClass('active');
-      e.stopPropagation();
-    });
-  });
-</script>
+</body>
+</html>
