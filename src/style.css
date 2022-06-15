@@ -102,19 +102,19 @@
 }
 
 /*--------------memeber-card-design----------*/
-.member-view-box{
+.child-view-box{
     padding:0px 20px;
     text-align: center;
     border-radius: 4px;
     position: relative;
 }
-.member-image{
-    width: 60px;
+.child-image{
+    width: 140px;
     position: relative;
 }
-.member-image img{
-    width: 60px;
-    height: 60px;
+.child-image img{
+    width: 30px;
+    height: 20px;
     border-radius: 6px;
   background-color :#000;
   z-index: 1;
