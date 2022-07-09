@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <div id="box">
+    <input type="button" value="how are you?" id="how are you?" onclick="show()"/>
+  </div>
+
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  let counter = 1;
+  let id = "Q"+counter
+  const map1 = new Map();
+
+  map1.set('how are you?', ["fine","Not fine"]);
+  map1.set('fine', ["nice weather","nice people"]);
+  map1.set('Not fine', ["bad weather","bad people"]);
+
+  let keys = map1.getKeys();
+
+  function show()
+  {
+    const button1 = document.createElement('button')
+    button1.innerText = map1.get('how are you?')[0];
+
+    const button2 = document.createElement('button')
+    button2.innerText = map1.get('how are you?')[1];
+
+    document.getElementById('how are you?').setAttribute("type", "hidden");
+    document.body.appendChild(button1)
+    document.body.appendChild(button2)
+
+  }
+</script>
