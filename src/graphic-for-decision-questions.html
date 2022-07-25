@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Graphic</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="./button.css">
 
-  <div id="box">
-    <input type="button" value="how are you?" id="how are you?" onclick="show()"/>
+  <div id="box" style="text-align:center;width: 400px;margin: 0 auto;padding: 100px">
+    <input class="button-73" type="button" value="how are you?" id="1" onclick="show1()"/>
+
+    <input class="button-73" type="button" value="fine" id="2" onclick="show2()" hidden/>
+    <input class="button-73" type="button" value="Not fine" id="3" onclick="show3()" hidden/>
+
+    <input class="button-73" type="button" value="nice weather" id="4" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="nice people" id="5" onclick="show()" hidden/>
+
+<!--    <input class="button-86" type="button" value="bad weather" id="6" onclick="show()"/>-->
+<!--    <input class="button-86" type="button" value="bad people" id="7" onclick="show()"/>-->
   </div>
 
 </head>
@@ -25,17 +37,19 @@
 
   let keys = map1.getKeys();
 
-  function show()
-  {
-    const button1 = document.createElement('button')
-    button1.innerText = map1.get('how are you?')[0];
+  function show1(qualifiedName, value) {
 
-    const button2 = document.createElement('button')
-    button2.innerText = map1.get('how are you?')[1];
+    document.getElementById("1").setAttribute("hidden", value);
+    document.getElementById("2").removeAttribute("hidden");
+    document.getElementById("3").removeAttribute("hidden");
 
-    document.getElementById('how are you?').setAttribute("type", "hidden");
-    document.body.appendChild(button1)
-    document.body.appendChild(button2)
+  }
+  function show2(qualifiedName, value) {
+
+    document.getElementById('2').setAttribute("hidden", value);
+    document.getElementById('3').setAttribute("hidden", value);
+    document.getElementById('4').removeAttribute("hidden");
+    document.getElementById('5').removeAttribute("hidden");
 
   }
 </script>
