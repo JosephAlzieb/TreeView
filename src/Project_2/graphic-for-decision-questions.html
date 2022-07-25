@@ -8,16 +8,28 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="button.css">
 
   <div id="box" style="text-align:center;width: 400px;margin: 0 auto;padding: 100px">
-    <input class="button-73" type="button" value="how are you?" id="1" onclick="show1()"/>
+    <input class="button-73" type="button" value="how are you?" id="1" onclick="show1(this.id)"/>
 
-    <input class="button-73" type="button" value="fine" id="2" onclick="show2()" hidden/>
-    <input class="button-73" type="button" value="Not fine" id="3" onclick="show3()" hidden/>
+    <input class="button-73" type="button" value="fine" id="2" onclick="show2(this.id,2)" hidden/>
+    <input class="button-73" type="button" value="Not fine" id="3" onclick="show3(this.id,3)" hidden/>
 
-    <input class="button-73" type="button" value="nice weather" id="4" onclick="show()" hidden/>
-    <input class="button-73" type="button" value="nice people" id="5" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="nice weather" id="4" onclick="show2(this.id,4)" hidden/>
+    <input class="button-73" type="button" value="nice people" id="5" onclick="show3(this.id,5)" hidden/>
 
-<!--    <input class="button-86" type="button" value="bad weather" id="6" onclick="show()"/>-->
-<!--    <input class="button-86" type="button" value="bad people" id="7" onclick="show()"/>-->
+    <input class="button-73" type="button" value="bad weather" id="6" onclick="show2(this.id,6)" hidden/>
+    <input class="button-73" type="button" value="bad people" id="7" onclick="show3(this.id, 7)"hidden/>
+
+    <input class="button-73" type="button" value="Sommer" id="8" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="Winter" id="9" onclick="show()"hidden/>
+
+    <input class="button-73" type="button" value="friends" id="10" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="family" id="11" onclick="show()"hidden/>
+
+    <input class="button-73" type="button" value="hot" id="12" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="cold" id="13" onclick="show()"hidden/>
+
+    <input class="button-73" type="button" value="bad pe 1" id="14" onclick="show()" hidden/>
+    <input class="button-73" type="button" value="bad pe 2" id="15" onclick="show()"hidden/>
   </div>
 
 </head>
@@ -27,29 +39,45 @@
 </html>
 
 <script>
-  let counter = 1;
-  let id = "Q"+counter
-  const map1 = new Map();
 
-  map1.set('how are you?', ["fine","Not fine"]);
-  map1.set('fine', ["nice weather","nice people"]);
-  map1.set('Not fine', ["bad weather","bad people"]);
+  function show1(id) {
 
-  let keys = map1.getKeys();
+    let n = parseInt(id);
 
-  function show1(qualifiedName, value) {
-
-    document.getElementById("1").setAttribute("hidden", value);
-    document.getElementById("2").removeAttribute("hidden");
-    document.getElementById("3").removeAttribute("hidden");
+    document.getElementById(n.toString()).remove();
+    document.getElementById((n+1).toString()).removeAttribute("hidden");
+    document.getElementById((n+2).toString()).removeAttribute("hidden");
 
   }
-  function show2(qualifiedName, value) {
+  function show2(id, x) {
 
-    document.getElementById('2').setAttribute("hidden", value);
-    document.getElementById('3').setAttribute("hidden", value);
-    document.getElementById('4').removeAttribute("hidden");
-    document.getElementById('5').removeAttribute("hidden");
+    let n = parseInt(id);
+
+    document.getElementById(n.toString()).remove();
+    document.getElementById((n+1).toString()).remove();
+    document.getElementById((n+x).toString()).removeAttribute("hidden");
+    document.getElementById((n+x+1).toString()).removeAttribute("hidden");
+
+  }
+  function show3(id, x) {
+
+    let n = parseInt(id);
+
+    document.getElementById(n.toString()).remove();
+    document.getElementById((n-1).toString()).remove();
+    document.getElementById((n+x).toString()).removeAttribute("hidden");
+    document.getElementById((n+x+1).toString()).removeAttribute("hidden");
+
+  }
+
+  function show4(id) {
+
+    let n = parseInt(id);
+
+    document.getElementById(n.toString()).remove();
+    document.getElementById((n+1).toString()).remove();
+    document.getElementById((n+3).toString()).removeAttribute("hidden");
+    document.getElementById((n+4).toString()).removeAttribute("hidden");
 
   }
 </script>
